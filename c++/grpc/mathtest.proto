@@ -4,9 +4,9 @@ option java_package = "ex.grpc";
 
 package mathtest;
 
-// Defines the pervice
+// Defines the service
 service MathTest {
-    // Sends the request
+    // Function invoked to send the request
     rpc sendRequest (MathRequest) returns (MathReply) {}
 }
 

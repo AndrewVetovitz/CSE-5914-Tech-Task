@@ -53,17 +53,16 @@ void Run(int& runs) {
 
     int response;
 
-    clock_t time;
-    time = clock();
+    clock_t t;
+    t = clock();
 
     for(int i = 0; i < runs; i++) {
         response = client.sendRequest(i, i + 5);
         std::cout << "Answer received: " << i << " * " << i + 5 << " = " << response << std::endl;
     }
 
-    time = clock() - time;
-
-    std::cout << "Total time: " << time << std::endl;
+    t = clock() - t;
+    std::cout << "Total time: " << (float)t / CLOCKS_PER_SEC << " seconds" << std::endl;
 }
 
 int main(int argc, char* argv[]){

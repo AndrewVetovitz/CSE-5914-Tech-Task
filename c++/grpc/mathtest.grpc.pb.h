@@ -27,7 +27,7 @@ class ServerContext;
 
 namespace mathtest {
 
-// Defines the pervice
+// Defines the service
 class MathTest final {
  public:
   static constexpr char const* service_full_name() {
@@ -36,7 +36,7 @@ class MathTest final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Sends the request
+    // Function invoked to send the request
     virtual ::grpc::Status sendRequest(::grpc::ClientContext* context, const ::mathtest::MathRequest& request, ::mathtest::MathReply* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mathtest::MathReply>> AsyncsendRequest(::grpc::ClientContext* context, const ::mathtest::MathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mathtest::MathReply>>(AsyncsendRequestRaw(context, request, cq));
@@ -47,7 +47,7 @@ class MathTest final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      // Sends the request
+      // Function invoked to send the request
       virtual void sendRequest(::grpc::ClientContext* context, const ::mathtest::MathRequest* request, ::mathtest::MathReply* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
@@ -90,7 +90,7 @@ class MathTest final {
    public:
     Service();
     virtual ~Service();
-    // Sends the request
+    // Function invoked to send the request
     virtual ::grpc::Status sendRequest(::grpc::ServerContext* context, const ::mathtest::MathRequest* request, ::mathtest::MathReply* response);
   };
   template <class BaseClass>

@@ -46,9 +46,10 @@ sudo make install
 
 # Writing a simple request
 
-
-
 # Benchmarks
+        1           10          100         1000        10000       1000000
+http:   .007 sec    .021 sec    .044 sec    .270 sec    2.525 sec   25.046 sec
+gRPC:   .003 sec    .007 sec    .019 sec    .078 sec    .665 sec    6.404 sec
 
 # Closing
 While gRPC can be a little difficult to setup at first while most rest services are quicker to get up and running if speed is a requirment the extra time to prepare gRPC can be worth it. Also since more content is being driven over the web year over year being able to presupport http2 can be worth it for the asynchronous gains used in these requests.
