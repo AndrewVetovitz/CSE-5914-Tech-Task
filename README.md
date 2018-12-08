@@ -1,10 +1,15 @@
 # CSE-5914-Tech-Task
 Tech task for 5914
 
-# What is GRPC
-gRPC is a application based communication based on buffers. These buffers can communicate language-anonomous (so ruby -> python or C++ -> Java for exp.). The idea over rest is to reduce the amount of required code as well as reduce overall complexity while improving speed.
+# What is gRPC
+gRPC which is short for Google RPC is an application based communication based on buffers. These buffers can communicate language-anonomous (so ruby -> python or C++ -> Java for exp.).
 
-# C++
+gRPC is written in a serialization format. The base use in this tutorial with be protobuf which comes default with the gRPC in the download section below. Any serialization language can be used however.
+
+# gRPC vs REST
+The advantage of gRPC over REST is several. First and foremost gRPC is much quicker than REST because encoding / decoding happens over the users local CPU. Secondly the amount of code one needs to write is less than that of most REST implementations. 
+
+# C++ Installation
 How To Install
 Linux:
 [sudo] apt-get install build-essential autoconf libtool pkg-config
@@ -38,3 +43,12 @@ git submodule update --init
 
 cd grpc/third_party/protobuf
 sudo make install
+
+# Writing a simple request
+
+
+
+# Benchmarks
+
+# Closing
+While gRPC can be a little difficult to setup at first while most rest services are quicker to get up and running if speed is a requirment the extra time to prepare gRPC can be worth it. Also since more content is being driven over the web year over year being able to presupport http2 can be worth it for the asynchronous gains used in these requests.
