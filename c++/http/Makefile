@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS += -std=c++11
 
-FLAGS = -lpistache -lpthread
+FLAGS = -lpthread
 
 all: server client
 
